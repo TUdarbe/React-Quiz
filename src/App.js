@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Forecast from "./Forecast";
+import axios from "axios";
 
-function App() {
+const App = () => {
+  // const apiKey = "4e38677a0dad8f705187e183182bf75b";
+  const apiKey2 = "7b26c92417fd3678d52eac12dc870222";
+  const [find, setFind] = useState("");
+  const [forecast, setForecast] = useState({});
+  const [city, setCity] = useState("");
+
+  const handleSearch = (event) => {
+    setFind(event.target.value);
+  };
+
+  const handleCity = () => {
+    if (find) {
+      axios
+        .get(
+          "http://api.openweathermap.org/data/2.5/weather?q=" +
+            find.toLocaleLowerCase() +
+            "&units=metric" +
+            "&appid=" +
+            apiKey2
+        )
+        .then((response) => {
+          const data = response.data;
+          setForecast(data.main);
+          setCity(data.name);
+        });
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Enter city name to get forecast
+      <input value={find} onChange={handleSearch}></input>
+      <button onClick={handleCity}>Search</button>
+      <Forecast city={city} forecast={forecast} />
     </div>
   );
-}
+};
 
 export default App;
