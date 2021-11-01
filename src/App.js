@@ -3,8 +3,8 @@ import Forecast from "./Forecast";
 import axios from "axios";
 
 const App = () => {
-  // const apiKey = "4e38677a0dad8f705187e183182bf75b";
-  const apiKey2 = "7b26c92417fd3678d52eac12dc870222";
+  const apiKey = "4e38677a0dad8f705187e183182bf75b";
+  //const apiKey2 = "7b26c92417fd3678d52eac12dc870222";
   const [find, setFind] = useState("");
   const [forecast, setForecast] = useState({});
   const [city, setCity] = useState("");
@@ -21,7 +21,7 @@ const App = () => {
             find.toLocaleLowerCase() +
             "&units=metric" +
             "&appid=" +
-            apiKey2
+            apiKey
         )
         .then((response) => {
           const data = response.data;
