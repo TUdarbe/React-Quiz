@@ -1,4 +1,6 @@
 # React-Quiz
+Answers to this quiz are found in the Answers.txt file
+
 1. Write a react function that takes the following input:
 
 rooms = [
