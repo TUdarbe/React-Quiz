@@ -10,7 +10,8 @@ const PrintRooms = (rooms) => {
   };
 
 
-2.) function fooBar (n) {
+2.) 
+function fooBar (n) {
 	
 	if ( n % 14 === 0 ) { console.log("foobar") }
 	if ( n % 7 === 0 )  { console.log("bar") }
@@ -18,7 +19,6 @@ const PrintRooms = (rooms) => {
 }
 
 3.) 
-
 function readFile(file) {
   const fs = require("fs");
   let totalValue = 0;
@@ -46,7 +46,6 @@ function readFile(file) {
 
 
 4.) 
-
 switch(province)
 {
     case ONTARIO: rate = ONTARIO_RATE; break;
