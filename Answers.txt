@@ -9,7 +9,6 @@ const PrintRooms = (rooms) => {
     ));
   };
 
-
 2.) 
 function fooBar (n) {
 	
@@ -43,7 +42,6 @@ function readFile(file) {
   }
   return totalValue;
 }
-
 
 4.) 
 switch(province)
